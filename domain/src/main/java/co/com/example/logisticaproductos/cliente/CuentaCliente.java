@@ -6,12 +6,12 @@ import co.com.example.logisticaproductos.cliente.values.Rol;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Cuenta extends Entity<CuentaId> {
+public class CuentaCliente extends Entity<CuentaId> {
     private Set<Preferencia> preferencias;
     private Rol rol;
 
 
-    public Cuenta(CuentaId id,Rol rol) {
+    public CuentaCliente(CuentaId id, Rol rol) {
         super(id);
         this.rol = rol;
         this.preferencias = new HashSet<>();

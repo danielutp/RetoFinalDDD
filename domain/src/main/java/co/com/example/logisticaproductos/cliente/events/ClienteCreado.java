@@ -1,7 +1,5 @@
 package co.com.example.logisticaproductos.cliente.events;
 
-import co.com.example.logisticaproductos.cliente.Cuenta;
-import co.com.example.logisticaproductos.cliente.Suscripcion;
 import co.com.example.logisticaproductos.cliente.values.CuentaId;
 import co.com.example.logisticaproductos.cliente.values.Rol;
 import co.com.example.logisticaproductos.cliente.values.SuscripcionId;

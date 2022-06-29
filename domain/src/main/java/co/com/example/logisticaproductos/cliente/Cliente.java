@@ -1,18 +1,16 @@
 package co.com.example.logisticaproductos.cliente;
+import co.com.example.logisticaproductos.cliente.events.*;
 import co.com.example.logisticaproductos.cliente.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.example.logisticaproductos.cliente.events.AsociarCuenta;
-import co.com.example.logisticaproductos.cliente.events.ClienteCreado;
-import co.com.example.logisticaproductos.cliente.events.RolCuentaCambiada;
-import co.com.example.logisticaproductos.cliente.events.TipoDeSuscripcionCambiada;
 
 import java.util.List;
 
 public class Cliente extends AggregateEvent<ClienteId> {
 
     protected DatosUsuario datosUsuario;
-    protected Cuenta cuenta;
+    protected  Contrato contrato;
+    protected CuentaCliente cuentaCliente;
     protected Suscripcion suscripcion;
 
 
@@ -27,9 +25,12 @@ public class Cliente extends AggregateEvent<ClienteId> {
         subscribe(new ClienteEventChange(this));
     }
 
-    public void asociarCuenta(Cuenta cuenta){
-        appendChange(new AsociarCuenta(cuenta)).apply();
+    public void crearContrato(CuentaId cuentaId,ContratoId contratoId,Detalle detalle){
+        appendChange(new ContratoCreado(cuentaId,contratoId,detalle)).apply();
+    }
 
+    public void asociarCuenta(CuentaCliente cuentaCliente){
+        appendChange(new AsociarCuenta(cuentaCliente)).apply();
     }
 
     public void cambiarRolCuenta(CuentaId cuentaId,Rol rolCuenta){

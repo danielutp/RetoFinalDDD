@@ -1,16 +1,16 @@
 package co.com.example.logisticaproductos.cliente.events;
 
-import co.com.example.logisticaproductos.cliente.Cuenta;
+import co.com.example.logisticaproductos.cliente.CuentaCliente;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class AsociarCuenta extends DomainEvent {
-    private final Cuenta cuenta;
-    public AsociarCuenta(Cuenta cuenta) {
+    private final CuentaCliente cuentaCliente;
+    public AsociarCuenta(CuentaCliente cuentaCliente) {
         super("co.com.sofka.logisticaproductos.asociarCuenta");
-        this.cuenta = cuenta;
+        this.cuentaCliente = cuentaCliente;
     }
 
-    public Cuenta getCuenta() {
-        return cuenta;
+    public CuentaCliente getCuenta() {
+        return cuentaCliente;
     }
 }

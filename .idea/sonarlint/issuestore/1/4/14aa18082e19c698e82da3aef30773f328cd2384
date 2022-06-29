@@ -1,15 +1,0 @@
-
-h
-java:S1192"RDefine a constant instead of duplicating this literal "No puede ser null" 4 times.(…øÿ­
-k	java:S116
-"QRename this field "Barrio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…ùòşÿÿÿÿ
-n	java:S116"TRename this field "Direccion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶İ¡¹ÿÿÿÿÿ
-E
-java:S1068"*Remove this unused "nombre" private field.(Ì´™ùÿÿÿÿ
-G
-java:S1068	",Remove this unused "telefono" private field.(˜¸Éùÿÿÿÿ
-E
-java:S1068
-"*Remove this unused "Barrio" private field.(…ùòşÿÿÿÿ
-H
-java:S1068"-Remove this unused "Direccion" private field.(¶İ¡¹ÿÿÿÿÿ

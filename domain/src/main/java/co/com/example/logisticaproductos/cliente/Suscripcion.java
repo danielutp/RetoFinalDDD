@@ -1,10 +1,8 @@
 package co.com.example.logisticaproductos.cliente;
-
 import co.com.example.logisticaproductos.cliente.values.Beneficio;
 import co.com.example.logisticaproductos.cliente.values.TipoSuscripcion;
 import co.com.sofka.domain.generic.Entity;
 import co.com.example.logisticaproductos.cliente.values.SuscripcionId;
-
 import java.util.HashSet;
 import java.util.Set;
 
