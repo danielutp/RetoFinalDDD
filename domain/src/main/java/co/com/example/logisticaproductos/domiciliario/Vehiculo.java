@@ -1,5 +1,4 @@
 package co.com.example.logisticaproductos.domiciliario;
-
 import co.com.example.logisticaproductos.domiciliario.values.TipoDeVehiculo;
 import co.com.example.logisticaproductos.domiciliario.values.VehiculoId;
 import co.com.sofka.domain.generic.Entity;

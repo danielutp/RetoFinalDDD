@@ -1,17 +1,11 @@
 package co.com.example.logisticaproductos.domiciliario;
-
-import co.com.example.logisticaproductos.cliente.Cliente;
-import co.com.example.logisticaproductos.cliente.ClienteEventChange;
-import co.com.example.logisticaproductos.cliente.events.ContratoCreado;
-import co.com.example.logisticaproductos.cliente.values.ClienteId;
-import co.com.example.logisticaproductos.cliente.values.ContratoId;
-import co.com.example.logisticaproductos.cliente.values.CuentaId;
-import co.com.example.logisticaproductos.cliente.values.Detalle;
+import co.com.example.logisticaproductos.domiciliario.events.CuentaDomiciliarioCreada;
 import co.com.example.logisticaproductos.domiciliario.events.DomiciliarioCreado;
+import co.com.example.logisticaproductos.domiciliario.events.InformeCreado;
+import co.com.example.logisticaproductos.domiciliario.events.VehiculoCreado;
 import co.com.example.logisticaproductos.domiciliario.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-
 import java.util.List;
 
 public class Domiciliario extends AggregateEvent<DomiciliarioId> {
@@ -36,7 +30,11 @@ public class Domiciliario extends AggregateEvent<DomiciliarioId> {
     }
 
     public void crearVehiculo(DomiciliarioId id, VehiculoId vehiculoId, TipoDeVehiculo tipoDeVehiculo){
-        appendChange(new Vehiculocreado(id,vehiculoId,tipoDeVehiculo)).apply();
+        appendChange(new VehiculoCreado(id,vehiculoId,tipoDeVehiculo)).apply();
+    }
+
+    public void crearCuentaDomiciliario(DomiciliarioId id, CuentaDomiciliarioId cuentaDomiciliarioId ){
+        appendChange(new CuentaDomiciliarioCreada(id,cuentaDomiciliarioId)).apply();
     }
 
 
@@ -45,6 +43,5 @@ public class Domiciliario extends AggregateEvent<DomiciliarioId> {
         events.forEach(domiciliario::applyEvent);
         return domiciliario;
     }
-
 
 }

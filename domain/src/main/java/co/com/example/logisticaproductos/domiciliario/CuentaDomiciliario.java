@@ -13,4 +13,5 @@ public class CuentaDomiciliario extends Entity<CuentaDomiciliarioId> {
         this.pago = null;
         this.puntuacion = null;
     }
+
 }

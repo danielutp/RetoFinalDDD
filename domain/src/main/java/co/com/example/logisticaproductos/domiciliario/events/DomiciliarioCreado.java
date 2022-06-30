@@ -28,4 +28,5 @@ public class DomiciliarioCreado extends DomainEvent {
     public VehiculoId getVehiculoId() {
         return vehiculoId;
     }
+
 }

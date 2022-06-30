@@ -1,4 +1,4 @@
-package co.com.example.logisticaproductos.domiciliario;
+package co.com.example.logisticaproductos.domiciliario.events;
 import co.com.example.logisticaproductos.domiciliario.values.Descripcion;
 import co.com.example.logisticaproductos.domiciliario.values.DomiciliarioId;
 import co.com.example.logisticaproductos.domiciliario.values.InformeId;
