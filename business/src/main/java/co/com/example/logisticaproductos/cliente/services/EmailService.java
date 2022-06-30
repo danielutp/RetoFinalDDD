@@ -1,4 +1,4 @@
-package co.com.example.logisticaproductos.cliente;
+package co.com.example.logisticaproductos.cliente.services;
 
 import co.com.example.logisticaproductos.cliente.values.ClienteId;
 

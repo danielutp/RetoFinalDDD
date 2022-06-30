@@ -1,6 +1,7 @@
 package co.com.example.logisticaproductos.cliente;
 
 import co.com.example.logisticaproductos.cliente.events.TipoDeSuscripcionCambiada;
+import co.com.example.logisticaproductos.cliente.services.EmailService;
 import co.com.example.logisticaproductos.cliente.values.ClienteId;
 import co.com.sofka.business.generic.ServiceBuilder;
 import co.com.sofka.business.generic.UseCaseHandler;
