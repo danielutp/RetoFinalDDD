@@ -32,4 +32,8 @@ public class Producto implements ValueObject<Producto.Props> {
         String nombre();
         String tipoDeProducto();
     }
+
+    public Producto cambiarNombreProducto(String nombre){
+        return new Producto(nombre,this.tipoDeProducto);
+    }
 }

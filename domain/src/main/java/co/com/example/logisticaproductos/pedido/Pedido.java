@@ -1,8 +1,8 @@
 package co.com.example.logisticaproductos.pedido;
-import co.com.example.logisticaproductos.pedido.events.CategoriaCreada;
-import co.com.example.logisticaproductos.pedido.events.FacturaCreada;
+import co.com.example.logisticaproductos.pedido.events.NombreProductoCambiado;
+import co.com.example.logisticaproductos.pedido.events.NombreTipoDeCategoriaCambiado;
 import co.com.example.logisticaproductos.pedido.events.PedidoCreado;
-import co.com.example.logisticaproductos.pedido.events.ProveedorCreado;
+import co.com.example.logisticaproductos.pedido.events.ValorFacturaCambiado;
 import co.com.example.logisticaproductos.pedido.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -26,16 +26,16 @@ public class Pedido extends AggregateEvent<PedidoId> {
         subscribe(new PedidoEventChange(this));
     }
 
-    public void crearFactura(PedidoId id, FacturaId facturaId, Valor valor){
-        appendChange(new FacturaCreada(id,facturaId,valor)).apply();
+    public void cambiarNombreProducto(ProveedorId proveedorId, Producto producto){
+        appendChange(new NombreProductoCambiado(proveedorId, producto)).apply();
     }
 
-    public void crearProveedor(PedidoId id, ProveedorId proveedorId, Producto producto){
-        appendChange(new ProveedorCreado(id,proveedorId,producto)).apply();
+    public void cambiarNombreTipoDeCategoria(CategoriaId categoriaId, TipoDeCategoria tipoDeCategoria){
+        appendChange(new NombreTipoDeCategoriaCambiado(categoriaId, tipoDeCategoria)).apply();
     }
 
-    public void crearCategoria(PedidoId id, CategoriaId categoriaId, TipoDeCategoria tipoDeCategoria){
-        appendChange(new CategoriaCreada(id,categoriaId,tipoDeCategoria)).apply();
+    public void cambiarValorFactura(FacturaId facturaId, Valor valor){
+        appendChange(new ValorFacturaCambiado(facturaId, valor)).apply();
     }
 
     public static Pedido from(PedidoId id, List<DomainEvent> events){

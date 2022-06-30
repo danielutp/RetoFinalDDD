@@ -3,11 +3,11 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.Objects;
 
 public class MedioDePago implements ValueObject<MedioDePago.Props> {
-    private final String TipoDePago;
+    private final String tipoDePago;
     private final Integer valor;
 
     public MedioDePago(String tipoDePago, Integer valor) {
-        TipoDePago = Objects.requireNonNull(tipoDePago);
+        this.tipoDePago = Objects.requireNonNull(tipoDePago);
         this.valor = Objects.requireNonNull(valor);
     }
 
@@ -15,8 +15,8 @@ public class MedioDePago implements ValueObject<MedioDePago.Props> {
     public Props value() {
         return new Props() {
             @Override
-            public String TipoDePago() {
-                return TipoDePago;
+            public String tipoDePago() {
+                return tipoDePago;
             }
 
             @Override
@@ -27,7 +27,7 @@ public class MedioDePago implements ValueObject<MedioDePago.Props> {
     }
 
     public interface Props {
-        String TipoDePago();
+        String tipoDePago();
         Integer valor();
 
     }

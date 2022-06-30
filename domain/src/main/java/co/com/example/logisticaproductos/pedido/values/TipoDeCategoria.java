@@ -13,7 +13,6 @@ public class TipoDeCategoria implements ValueObject<TipoDeCategoria.Props> {
         this.descripcion = Objects.requireNonNull(descripcion);
     }
 
-
     @Override
     public Props value() {
         return new Props() {
@@ -32,5 +31,9 @@ public class TipoDeCategoria implements ValueObject<TipoDeCategoria.Props> {
     public interface Props {
         String nombreTipoCategoria();
         String descripcion();
+    }
+
+    public TipoDeCategoria cambiarNombreTipoDeCategoria(String nombre){
+        return new TipoDeCategoria(nombre,this.descripcion);
     }
 }

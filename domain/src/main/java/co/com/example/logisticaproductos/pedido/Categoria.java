@@ -11,4 +11,9 @@ public class Categoria extends Entity<CategoriaId> {
         super(id);
         this.tipoDeCategoria = tipoDeCategoria;
     }
+
+    public void cambiarTipoDeCategoria(TipoDeCategoria tipoDeCategoriaACambiar){
+        this.tipoDeCategoria = tipoDeCategoria.cambiarNombreTipoDeCategoria(tipoDeCategoriaACambiar.value().nombreTipoCategoria());
+    }
+
 }

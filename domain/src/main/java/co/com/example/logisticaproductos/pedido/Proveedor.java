@@ -11,4 +11,8 @@ public class Proveedor extends Entity<ProveedorId> {
         this.producto=producto;
     }
 
+    public void cambiarNombreProducto(Producto productoACambiar){
+        this.producto = producto.cambiarNombreProducto(productoACambiar.value().nombre());
+    }
+
 }

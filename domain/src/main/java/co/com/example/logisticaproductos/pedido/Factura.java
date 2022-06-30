@@ -14,4 +14,8 @@ public class Factura extends Entity<FacturaId> {
         this.valor = Objects.requireNonNull(valor);
     }
 
+    public void cambiarValorFactura(Valor valorACambiar){
+        this.valor= valor.cambiarValor(valorACambiar.value());
+    }
+
 }

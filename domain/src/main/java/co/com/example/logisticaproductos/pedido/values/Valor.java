@@ -15,4 +15,8 @@ public class Valor implements ValueObject<Integer> {
     public Integer value() {
         return valor;
     }
+
+    public Valor cambiarValor(Integer valor){
+        return new Valor(valor);
+    }
 }
