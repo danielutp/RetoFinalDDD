@@ -1,7 +1,4 @@
-package co.com.example.logisticaproductos.usecase;
-
-import co.com.example.logisticaproductos.cliente.Cliente;
-import co.com.example.logisticaproductos.cliente.values.ClienteId;
+package co.com.example.logisticaproductos.cliente;
 import co.com.example.logisticaproductos.cliente.values.CuentaId;
 import co.com.example.logisticaproductos.cliente.values.SuscripcionId;
 import co.com.sofka.business.generic.UseCase;

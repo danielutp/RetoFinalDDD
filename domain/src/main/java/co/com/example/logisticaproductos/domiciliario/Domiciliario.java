@@ -1,8 +1,5 @@
 package co.com.example.logisticaproductos.domiciliario;
-import co.com.example.logisticaproductos.domiciliario.events.CuentaDomiciliarioCreada;
-import co.com.example.logisticaproductos.domiciliario.events.DomiciliarioCreado;
-import co.com.example.logisticaproductos.domiciliario.events.InformeCreado;
-import co.com.example.logisticaproductos.domiciliario.events.VehiculoCreado;
+import co.com.example.logisticaproductos.domiciliario.events.*;
 import co.com.example.logisticaproductos.domiciliario.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -25,18 +22,21 @@ public class Domiciliario extends AggregateEvent<DomiciliarioId> {
         subscribe(new DomiciliarioEventChange(this));
     }
 
-    public void crearInforme(DomiciliarioId id, InformeId informeId, Descripcion descripcion){
+    public void asociarInforme(DomiciliarioId id, InformeId informeId, Descripcion descripcion){
         appendChange(new InformeCreado(id,informeId,descripcion)).apply();
     }
 
-    public void crearVehiculo(DomiciliarioId id, VehiculoId vehiculoId, TipoDeVehiculo tipoDeVehiculo){
-        appendChange(new VehiculoCreado(id,vehiculoId,tipoDeVehiculo)).apply();
+    public void cambiarDescripcionInforme(InformeId informeId, Descripcion descripcion){
+        appendChange(new DescripcionInformeCambiada(informeId, descripcion)).apply();
     }
 
-    public void crearCuentaDomiciliario(DomiciliarioId id, CuentaDomiciliarioId cuentaDomiciliarioId ){
-        appendChange(new CuentaDomiciliarioCreada(id,cuentaDomiciliarioId)).apply();
+    public void cambiarMarcaVehiculo(VehiculoId vehiculoId, TipoDeVehiculo tipoDeVehiculo){
+        appendChange(new MarcaVehiculoCambiada(vehiculoId, tipoDeVehiculo)).apply();
     }
 
+    public void agregarPuntuacionCuentaDomiciliarion(CuentaDomiciliarioId cuentaDomiciliarioId,Integer puntaje){
+        appendChange(new PuntajeCuentaDomiciliarioAgregada(cuentaDomiciliarioId, puntaje)).apply();
+    }
 
     public static Domiciliario from(DomiciliarioId id, List<DomainEvent> events){
         var domiciliario = new Domiciliario((id));

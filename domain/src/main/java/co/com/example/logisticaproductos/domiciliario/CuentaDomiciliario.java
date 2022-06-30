@@ -14,4 +14,8 @@ public class CuentaDomiciliario extends Entity<CuentaDomiciliarioId> {
         this.puntuacion = null;
     }
 
+    public void agregarPuntuacion(Integer puntuacion){
+        this.puntuacion = new Puntuacion(puntuacion);
+    }
+
 }

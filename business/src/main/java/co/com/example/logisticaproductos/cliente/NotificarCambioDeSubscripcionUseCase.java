@@ -1,8 +1,7 @@
-package co.com.example.logisticaproductos.usecase;
+package co.com.example.logisticaproductos.cliente;
 
-import co.com.example.logisticaproductos.cliente.Cliente;
+import co.com.example.logisticaproductos.cliente.EmailService;
 import co.com.example.logisticaproductos.cliente.events.TipoDeSuscripcionCambiada;
-import co.com.example.logisticaproductos.cliente.values.ClienteId;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.business.support.TriggeredEvent;

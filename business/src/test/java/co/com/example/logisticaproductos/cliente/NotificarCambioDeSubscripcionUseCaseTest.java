@@ -1,10 +1,9 @@
-package co.com.example.logisticaproductos.usecase;
+package co.com.example.logisticaproductos.cliente;
 
 import co.com.example.logisticaproductos.cliente.events.TipoDeSuscripcionCambiada;
 import co.com.example.logisticaproductos.cliente.values.ClienteId;
 import co.com.sofka.business.generic.ServiceBuilder;
 import co.com.sofka.business.generic.UseCaseHandler;
-import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.TriggeredEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,8 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class NotificarCambioDeSubscripcionUseCaseTest {

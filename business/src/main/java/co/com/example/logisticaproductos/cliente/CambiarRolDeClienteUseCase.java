@@ -1,4 +1,4 @@
-package co.com.example.logisticaproductos.usecase;
+package co.com.example.logisticaproductos.cliente;
 import co.com.example.logisticaproductos.cliente.Cliente;
 import co.com.example.logisticaproductos.cliente.commands.CambiarRolCommand;
 import co.com.sofka.business.generic.UseCase;

@@ -10,4 +10,9 @@ public class Vehiculo extends Entity<VehiculoId> {
         super(id);
         this.tipoDeVehiculo= tipoDeVehiculo;
     }
+
+    public void cambiarMarcaVehiculo(TipoDeVehiculo tipoDeVehiculoACambiar){
+        this.tipoDeVehiculo = tipoDeVehiculo.cambiarMarcaVehiculo(tipoDeVehiculoACambiar.value().marca());
+    }
+
 }

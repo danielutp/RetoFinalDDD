@@ -1,5 +1,4 @@
 package co.com.example.logisticaproductos.domiciliario.values;
-
 import co.com.sofka.domain.generic.ValueObject;
 
 public class Descripcion implements ValueObject<String> {
@@ -13,4 +12,9 @@ public class Descripcion implements ValueObject<String> {
     public String value() {
         return descripcion;
     }
+
+    public Descripcion cambiarDescripcion(String descripcionACambiar){
+        return new Descripcion(descripcionACambiar);
+    }
+
 }

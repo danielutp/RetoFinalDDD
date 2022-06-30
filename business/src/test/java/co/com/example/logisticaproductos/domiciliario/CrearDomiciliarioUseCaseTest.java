@@ -1,9 +1,8 @@
-package co.com.example.logisticaproductos.usecase;
-
+package co.com.example.logisticaproductos.domiciliario;
+import co.com.example.logisticaproductos.cliente.CrearClienteUseCase;
 import co.com.example.logisticaproductos.cliente.commands.CrearClienteCommand;
 import co.com.example.logisticaproductos.cliente.events.ClienteCreado;
 import co.com.example.logisticaproductos.cliente.values.*;
-import co.com.example.logisticaproductos.usecase.CrearClienteUseCase;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
 import org.junit.jupiter.api.Assertions;
@@ -12,10 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @ExtendWith(MockitoExtension.class)
-class CrearClienteUseCaseTest {
+class CrearDomiciliarioUseCaseTest {
 
     @InjectMocks
     CrearClienteUseCase useCase;

@@ -10,4 +10,8 @@ public class Informe extends Entity<InformeId> {
         super(id);
         this.descripcion = descripcion;
     }
+
+    public void cambiarDescripcion(Descripcion descripcionACambiar){
+        this.descripcion = descripcion.cambiarDescripcion(descripcionACambiar.value());
+    }
 }

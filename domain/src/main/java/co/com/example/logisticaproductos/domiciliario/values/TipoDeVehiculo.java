@@ -1,32 +1,38 @@
 package co.com.example.logisticaproductos.domiciliario.values;
 import co.com.sofka.domain.generic.ValueObject;
+import java.util.Objects;
 
 public class TipoDeVehiculo implements ValueObject<TipoDeVehiculo.Props> {
-    private final String Marca;
-    private final Integer Cilindraje;
+    private final String marca;
+    private final Integer cilindraje;
 
     public TipoDeVehiculo(String marca, Integer cilindraje) {
-        Marca = marca;
-        Cilindraje = cilindraje;
+        this.marca = Objects.requireNonNull(marca);
+        this.cilindraje = Objects.requireNonNull(cilindraje);
     }
 
     @Override
     public Props value() {
         return new Props() {
             @Override
-            public String Marca() {
-                return Marca;
+            public String marca() {
+                return marca;
             }
 
             @Override
-            public Integer Cilindraje() {
-                return Cilindraje;
+            public Integer cilindraje() {
+                return cilindraje;
             }
         };
     }
 
     public interface Props {
-        String Marca();
-        Integer Cilindraje();
+        String marca();
+        Integer cilindraje();
     }
+
+    public TipoDeVehiculo cambiarMarcaVehiculo(String marca){
+        return new TipoDeVehiculo(marca,this.cilindraje);
+    }
+
 }
