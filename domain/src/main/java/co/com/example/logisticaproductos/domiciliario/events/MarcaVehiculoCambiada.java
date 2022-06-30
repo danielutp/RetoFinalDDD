@@ -14,11 +14,11 @@ public class MarcaVehiculoCambiada extends DomainEvent {
         this.tipoDeVehiculo = tipoDeVehiculo;
     }
 
-    public TipoDeVehiculo getTipoDeVehiculo() {
+    public TipoDeVehiculo tipoDeVehiculo() {
         return tipoDeVehiculo;
     }
 
-    public VehiculoId getVehiculoId() {
+    public VehiculoId vehiculoId() {
         return vehiculoId;
     }
 }

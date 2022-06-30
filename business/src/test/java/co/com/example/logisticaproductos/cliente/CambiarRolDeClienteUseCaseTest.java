@@ -47,7 +47,7 @@ class CambiarRolDeClienteUseCaseTest {
 
         //assert
         var event = (RolCuentaCambiada)events.get(0);
-        Assertions.assertEquals("General", event.getRolCuenta().value());
+        Assertions.assertEquals("General", event.rolCuenta().value());
 
     }
 

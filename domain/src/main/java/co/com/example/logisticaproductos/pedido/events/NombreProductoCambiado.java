@@ -14,11 +14,11 @@ public class NombreProductoCambiado extends DomainEvent {
         this.producto = producto;
     }
 
-    public Producto getProducto() {
+    public Producto producto() {
         return producto;
     }
 
-    public ProveedorId getProveedorId() {
+    public ProveedorId proveedorId() {
         return proveedorId;
     }
 }

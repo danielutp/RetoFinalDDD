@@ -6,28 +6,28 @@ public class ClienteEventChange extends EventChange {
          public ClienteEventChange(Cliente cliente) {
 
             apply((ClienteCreado event) ->{
-                cliente.cuentaCliente = new CuentaCliente(event.getCuentaId(), event.getRol());
-                cliente.suscripcion= new Suscripcion(event.getSuscripcionId(), event.getTipoSuscripcion());
+                cliente.cuentaCliente = new CuentaCliente(event.cuentaId(), event.rol());
+                cliente.suscripcion= new Suscripcion(event.suscripcionId(), event.tipoSuscripcion());
                 cliente.datosUsuario = null;
             });
 
              apply((ContratoCreado event) ->{
-                 cliente.contrato = new Contrato(event.getContratoId(),event.getDetalle());
+                 cliente.contrato = new Contrato(event.contratoId(),event.detalle());
              });
 
             apply((AsociarCuenta event) ->{
-                cliente.cuentaCliente = event.getCuenta();
+                cliente.cuentaCliente = event.cuenta();
             });
 
             apply((RolCuentaCambiada event) ->{
-                if(!cliente.cuentaCliente.identity().equals(event.getCuentaId())){
+                if(!cliente.cuentaCliente.identity().equals(event.cuentaId())){
                     throw new IllegalArgumentException("La cuenta no existe para este identificador");
                 }
-                cliente.cuentaCliente.cambiarRol(event.getRolCuenta());
+                cliente.cuentaCliente.cambiarRol(event.rolCuenta());
             });
 
              apply((TipoDeSuscripcionCambiada event) ->{
-                 cliente.suscripcion.cambiarTipoDeSuscripcion(event.getValor(),event.getTipoSuscripcion());
+                 cliente.suscripcion.cambiarTipoDeSuscripcion(event.valor(),event.tipoSuscripcion());
              });
 
          }

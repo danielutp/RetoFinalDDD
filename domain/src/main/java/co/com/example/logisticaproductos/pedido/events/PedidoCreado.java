@@ -22,31 +22,31 @@ public class PedidoCreado extends DomainEvent {
         this.medioDePago = medioDePago;
     }
 
-    public ProveedorId getProveedorId() {
+    public ProveedorId proveedorId() {
         return proveedorId;
     }
 
-    public Producto getProducto() {
+    public Producto producto() {
         return producto;
     }
 
-    public FacturaId getFacturaId() {
+    public FacturaId facturaId() {
         return facturaId;
     }
 
-    public Valor getValor() {
+    public Valor valor() {
         return valor;
     }
 
-    public CategoriaId getCategoriaId() {
+    public CategoriaId categoriaId() {
         return categoriaId;
     }
 
-    public TipoDeCategoria getTipoDeCategoria() {
+    public TipoDeCategoria tipoDeCategoria() {
         return tipoDeCategoria;
     }
 
-    public MedioDePago getMedioDePago() {
+    public MedioDePago medioDePago() {
         return medioDePago;
     }
 }

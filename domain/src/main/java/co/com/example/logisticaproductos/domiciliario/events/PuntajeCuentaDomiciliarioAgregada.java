@@ -12,11 +12,11 @@ public class PuntajeCuentaDomiciliarioAgregada extends DomainEvent {
         this.puntaje = puntaje;
     }
 
-    public CuentaDomiciliarioId getCuentaDomiciliarioId() {
+    public CuentaDomiciliarioId cuentaDomiciliarioId() {
         return cuentaDomiciliarioId;
     }
 
-    public Integer getPuntaje() {
+    public Integer puntaje() {
         return puntaje;
     }
 }

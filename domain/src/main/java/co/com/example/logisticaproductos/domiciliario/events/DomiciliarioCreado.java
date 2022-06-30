@@ -17,15 +17,15 @@ public class DomiciliarioCreado extends DomainEvent {
         this.cuentaDomiciliario = cuentaDomiciliario;
     }
 
-    public VehiculoId getVehiculoId() {
+    public VehiculoId vehiculoId() {
         return vehiculoId;
     }
 
-    public TipoDeVehiculo getTipoDeVehiculo() {
+    public TipoDeVehiculo tipoDeVehiculo() {
         return tipoDeVehiculo;
     }
 
-    public CuentaDomiciliario getCuentaDomiciliario() {
+    public CuentaDomiciliario cuentaDomiciliario() {
         return cuentaDomiciliario;
     }
 }

@@ -15,15 +15,15 @@ public class TipoDeSuscripcionCambiada extends DomainEvent {
         this.tipoSuscripcion = tipoSuscripcion;
     }
 
-    public ClienteId getId() {
+    public ClienteId id() {
         return id;
     }
 
-    public Integer getValor() {
+    public Integer valor() {
         return valor;
     }
 
-    public Boolean getTipoSuscripcion() {
+    public Boolean tipoSuscripcion() {
         return tipoSuscripcion;
     }
 }

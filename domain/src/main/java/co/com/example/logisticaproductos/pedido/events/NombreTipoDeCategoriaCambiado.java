@@ -14,11 +14,11 @@ public class NombreTipoDeCategoriaCambiado extends DomainEvent {
         this.tipoDeCategoria = tipoDeCategoria;
     }
 
-    public TipoDeCategoria getTipoDeCategoria() {
+    public TipoDeCategoria tipoDeCategoria() {
         return tipoDeCategoria;
     }
 
-    public CategoriaId getCategoriaId() {
+    public CategoriaId categoriaId() {
         return categoriaId;
     }
 }

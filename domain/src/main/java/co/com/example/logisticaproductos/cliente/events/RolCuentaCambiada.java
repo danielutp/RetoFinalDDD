@@ -1,6 +1,5 @@
 package co.com.example.logisticaproductos.cliente.events;
 
-import co.com.example.logisticaproductos.cliente.values.ClienteId;
 import co.com.example.logisticaproductos.cliente.values.CuentaId;
 import co.com.example.logisticaproductos.cliente.values.Rol;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -16,11 +15,11 @@ public class RolCuentaCambiada extends DomainEvent {
         this.rolCuenta = rolCuenta;
     }
 
-    public Rol getRolCuenta() {
+    public Rol rolCuenta() {
         return rolCuenta;
     }
 
-    public CuentaId getCuentaId() {
+    public CuentaId cuentaId() {
         return cuentaId;
     }
 }

@@ -13,11 +13,11 @@ public class DescripcionInformeCambiada extends DomainEvent {
         this.descripcion = descripcion;
     }
 
-    public Descripcion getDescripcion() {
+    public Descripcion descripcion() {
         return descripcion;
     }
 
-    public InformeId getInformeId() {
+    public InformeId informeId() {
         return informeId;
     }
 

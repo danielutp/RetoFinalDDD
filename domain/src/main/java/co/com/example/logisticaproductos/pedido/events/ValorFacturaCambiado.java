@@ -14,11 +14,11 @@ public class ValorFacturaCambiado extends DomainEvent {
         this.valor = valor;
     }
 
-    public Valor getValor() {
+    public Valor valor() {
         return valor;
     }
 
-    public FacturaId getFacturaId() {
+    public FacturaId facturaId() {
         return facturaId;
     }
 }

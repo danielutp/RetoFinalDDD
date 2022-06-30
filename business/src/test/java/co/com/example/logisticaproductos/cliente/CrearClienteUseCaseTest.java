@@ -35,8 +35,8 @@ class CrearClienteUseCaseTest {
 
         //assert
         var event = (ClienteCreado)events.get(0);
-        Assertions.assertEquals("Usuario", event.getRol().value());
-        Assertions.assertEquals("Usuario", event.getRol().value());
+        Assertions.assertEquals("Usuario", event.rol().value());
+        Assertions.assertEquals("Usuario", event.rol().value());
 
     }
 }

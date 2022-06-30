@@ -17,15 +17,15 @@ public class InformeCreado extends DomainEvent {
         this.descripcion = descripcion;
     }
 
-    public DomiciliarioId getId() {
+    public DomiciliarioId id() {
         return id;
     }
 
-    public InformeId getInformeId() {
+    public InformeId informeId() {
         return informeId;
     }
 
-    public Descripcion getDescripcion() {
+    public Descripcion descripcion() {
         return descripcion;
     }
 }

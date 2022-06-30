@@ -10,7 +10,7 @@ public class AsociarCuenta extends DomainEvent {
         this.cuentaCliente = cuentaCliente;
     }
 
-    public CuentaCliente getCuenta() {
+    public CuentaCliente cuenta() {
         return cuentaCliente;
     }
 }

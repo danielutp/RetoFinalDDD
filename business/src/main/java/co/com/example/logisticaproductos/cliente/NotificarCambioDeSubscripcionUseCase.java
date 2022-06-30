@@ -1,6 +1,5 @@
 package co.com.example.logisticaproductos.cliente;
 
-import co.com.example.logisticaproductos.cliente.EmailService;
 import co.com.example.logisticaproductos.cliente.events.TipoDeSuscripcionCambiada;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
@@ -22,8 +21,8 @@ public class NotificarCambioDeSubscripcionUseCase extends UseCase<TriggeredEvent
 
         var service = getService(EmailService.class).orElseThrow();
 
-        String body = String.format("Su subscripción cambio a %s", event.getValor());
-        service.enviarCorreo(event.getId(), body);
+        String body = String.format("Su subscripción cambio a %s", event.valor());
+        service.enviarCorreo(event.id(), body);
 
         emit().onResponse(new ResponseEvents(List.of()));
 

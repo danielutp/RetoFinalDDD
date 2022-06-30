@@ -23,19 +23,19 @@ public class ClienteCreado extends DomainEvent {
         this.rol = rol;
     }
 
-    public CuentaId getCuentaId() {
+    public CuentaId cuentaId() {
         return cuentaId;
     }
 
-    public SuscripcionId getSuscripcionId() {
+    public SuscripcionId suscripcionId() {
         return suscripcionId;
     }
 
-    public Rol getRol() {
+    public Rol rol() {
         return rol;
     }
 
-    public TipoSuscripcion getTipoSuscripcion() {
+    public TipoSuscripcion tipoSuscripcion() {
         return tipoSuscripcion;
     }
 }

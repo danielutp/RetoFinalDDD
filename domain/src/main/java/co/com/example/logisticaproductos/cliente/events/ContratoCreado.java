@@ -17,15 +17,15 @@ public class ContratoCreado extends DomainEvent {
         this.detalle = detalle;
     }
 
-    public CuentaId getCuentaId() {
+    public CuentaId cuentaId() {
         return cuentaId;
     }
 
-    public ContratoId getContratoId() {
+    public ContratoId contratoId() {
         return contratoId;
     }
 
-    public Detalle getDetalle() {
+    public Detalle detalle() {
         return detalle;
     }
 }
