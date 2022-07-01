@@ -7,6 +7,7 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -43,7 +44,7 @@ import static org.mockito.Mockito.when;
 
             //assert
             var event = (ValorFacturaCambiado)events.get(0);
-            // Assertions.assertEquals(1 , event.valor());
+            Assertions.assertEquals(2 , event.valor().value());
 
         }
 

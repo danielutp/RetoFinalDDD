@@ -1,14 +1,13 @@
 package co.com.example.logisticaproductos.pedido;
 import co.com.example.logisticaproductos.pedido.commands.CambiarNombreProductoCommand;
-import co.com.example.logisticaproductos.pedido.commands.CambiarValorFacturaCommand;
 import co.com.example.logisticaproductos.pedido.events.NombreProductoCambiado;
 import co.com.example.logisticaproductos.pedido.events.PedidoCreado;
-import co.com.example.logisticaproductos.pedido.events.ValorFacturaCambiado;
 import co.com.example.logisticaproductos.pedido.values.*;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -31,7 +30,7 @@ class CambiarNombreProductoUseCaseTest {
         //arrange
         PedidoId pedidoId = PedidoId.of("1");
         ProveedorId proveedorId = ProveedorId.of("1");
-        Producto producto = new Producto("ee","dd");
+        Producto producto = new Producto("ee","prueba");
         var command = new CambiarNombreProductoCommand(pedidoId, proveedorId, producto);
         when(repository.getEventsBy(pedidoId.value())).thenReturn(history());
         usecase.addRepository(repository);
@@ -44,7 +43,7 @@ class CambiarNombreProductoUseCaseTest {
 
         //assert
         var event = (NombreProductoCambiado)events.get(0);
-        // Assertions.assertEquals(1 , event.valor());
+        Assertions.assertEquals("prueba" , event.producto().value().tipoDeProducto());
 
     }
 
