@@ -39,5 +39,4 @@ class NotificarCambioDeCilindrajeUseCaseTest {
         Mockito.verify(service).enviarCorreoPedido(PedidoId.of("1"), "Su cilindraje cambio a 1");
         Assertions.assertEquals(0, events.size());
     }
-
 }
