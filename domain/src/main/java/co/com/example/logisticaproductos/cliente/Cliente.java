@@ -37,10 +37,9 @@ public class Cliente extends AggregateEvent<ClienteId> {
         appendChange(new RolCuentaCambiada(cuentaId, rolCuenta)).apply();
     }
 
-    public void cambiarTipoDeSuscripcion(ClienteId id,Integer valor, boolean tipoSuscripcionCuenta){
+    public void cambiarValorDeSuscripcion(ClienteId id,Integer valor, boolean tipoSuscripcionCuenta){
         appendChange(new TipoDeSuscripcionCambiada(id, valor ,tipoSuscripcionCuenta)).apply();
     }
-
 
     public static Cliente from(ClienteId id, List<DomainEvent> events){
         var cliente = new Cliente((id));

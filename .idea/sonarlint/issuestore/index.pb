@@ -1,8 +1,6 @@
 
 ‚
 Rdomain/src/main/java/co/com/sofka/logisticaproductos/cliente/values/ClienteId.java,b\b\bbd54994a315d72e65a0e9457223c34ec1b9f629
-Š
-Zdomain/src/main/java/co/com/example/logisticaproductos/cliente/values/TipoSuscripcion.java,4\6\46d99d86154fff841de0f86d05ec00ba45828cf4
 >
 domain/pom.xml,8\b\8b11330a6810846535e4b5ba2024ccfcee112862
 7
