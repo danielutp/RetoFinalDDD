@@ -7,8 +7,6 @@ Zdomain/src/main/java/co/com/example/logisticaproductos/cliente/values/TipoSuscr
 domain/pom.xml,8\b\8b11330a6810846535e4b5ba2024ccfcee112862
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-Ž
-^domain/src/main/java/co/com/example/logisticaproductos/cliente/commands/CambiarRolCommand.java,5\4\542f78699f20345aa582e3f11da10cfe3945cd29
 @
 business/pom.xml,d\4\d4ebdfff43bfaf86e620b416afb4835b5f67b594
 ”

@@ -1,8 +1,10 @@
 package co.com.example.logisticaproductos.domiciliario;
-import co.com.example.logisticaproductos.cliente.CrearClienteUseCase;
-import co.com.example.logisticaproductos.cliente.commands.CrearClienteCommand;
-import co.com.example.logisticaproductos.cliente.events.ClienteCreado;
-import co.com.example.logisticaproductos.cliente.values.*;
+import co.com.example.logisticaproductos.domiciliario.commands.CrearDomiciliarioCommand;
+import co.com.example.logisticaproductos.domiciliario.events.DomiciliarioCreado;
+import co.com.example.logisticaproductos.domiciliario.values.CuentaDomiciliarioId;
+import co.com.example.logisticaproductos.domiciliario.values.DomiciliarioId;
+import co.com.example.logisticaproductos.domiciliario.values.TipoDeVehiculo;
+import co.com.example.logisticaproductos.domiciliario.values.VehiculoId;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
 import org.junit.jupiter.api.Assertions;
@@ -15,16 +17,16 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class CrearDomiciliarioUseCaseTest {
 
     @InjectMocks
-    CrearClienteUseCase useCase;
+    CrearDomiciliarioUseCase useCase;
 
     @Test
-    public void crearCliente(){
+    public void crearDomiciliario(){
         //arrange
-        ClienteId clienteId = ClienteId.of(ClienteId.Type.CC, "32212234");
-        DatosUsuario datosUsuario = new DatosUsuario("Raul", 322123, "Buga", "calle 433#asd");
-        Rol rol = new Rol("Usuario");
-        TipoSuscripcion tipoSuscripcion = new TipoSuscripcion(30000, Boolean.FALSE);
-        var command = new CrearClienteCommand( clienteId,  datosUsuario,  rol,  tipoSuscripcion);
+        DomiciliarioId domiciliarioId = DomiciliarioId.of("1");
+        VehiculoId vehiculoId = VehiculoId.of("1");
+        CuentaDomiciliario cuentaDomiciliario = new CuentaDomiciliario(CuentaDomiciliarioId.of("c1"));
+        TipoDeVehiculo tipoDeVehiculo = new TipoDeVehiculo("merce",20);
+        var command = new CrearDomiciliarioCommand( domiciliarioId,  vehiculoId,  cuentaDomiciliario,  tipoDeVehiculo);
 
 
         //act
@@ -35,9 +37,7 @@ class CrearDomiciliarioUseCaseTest {
 
 
         //assert
-        var event = (ClienteCreado)events.get(0);
-        Assertions.assertEquals("Usuario", event.rol().value());
-        Assertions.assertEquals("Usuario", event.rol().value());
-
+        var event = (DomiciliarioCreado)events.get(0);
+        Assertions.assertEquals("merce", event.tipoDeVehiculo().value().marca());
     }
 }

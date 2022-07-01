@@ -17,7 +17,5 @@ public class CambiarRolDeClienteUseCase extends UseCase<RequestCommand<CambiarRo
         cliente.cambiarRolCuenta(command.getCuentaId(), command.getRolCuenta());
 
         emit().onResponse(new ResponseEvents(cliente.getUncommittedChanges()));
-
-
     }
 }
