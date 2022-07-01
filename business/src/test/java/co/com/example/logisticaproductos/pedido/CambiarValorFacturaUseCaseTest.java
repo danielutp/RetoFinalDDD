@@ -1,9 +1,4 @@
 package co.com.example.logisticaproductos.pedido;
-import co.com.example.logisticaproductos.cliente.CambiarRolDeClienteUseCase;
-import co.com.example.logisticaproductos.cliente.commands.CambiarRolCommand;
-import co.com.example.logisticaproductos.cliente.events.ClienteCreado;
-import co.com.example.logisticaproductos.cliente.events.RolCuentaCambiada;
-import co.com.example.logisticaproductos.cliente.values.*;
 import co.com.example.logisticaproductos.pedido.commands.CambiarValorFacturaCommand;
 import co.com.example.logisticaproductos.pedido.events.PedidoCreado;
 import co.com.example.logisticaproductos.pedido.events.ValorFacturaCambiado;
@@ -12,7 +7,6 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
