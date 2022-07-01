@@ -9,11 +9,13 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.TriggeredEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-
+@ExtendWith(MockitoExtension.class)
 class NotificarCambioDeCilindrajeUseCaseTest {
     @Mock
     EmailServicePedido service;
@@ -25,8 +27,8 @@ class NotificarCambioDeCilindrajeUseCaseTest {
     void enviarCorreoPedido(){
         VehiculoId vehiculoId = new VehiculoId();
         TipoDeVehiculo tipoDeVehiculo = new TipoDeVehiculo("m",1);
-        var event = new CilindrajeVehiculoCambiado(PedidoId.of("1"), vehiculoId ,tipoDeVehiculo);
-        Mockito.doNothing().when(service).enviarCorreoPedido(PedidoId.of("1"), "Su cilindraje cambio a 156");
+        var event = new CilindrajeVehiculoCambiado(PedidoId.of("1"), "vehiculoId" ,1);
+        Mockito.doNothing().when(service).enviarCorreoPedido(PedidoId.of("1"), "Su cilindraje cambio a 1");
         usecase.addServiceBuilder(new ServiceBuilder().addService(service));
 
         var events = UseCaseHandler.getInstance()
@@ -34,7 +36,7 @@ class NotificarCambioDeCilindrajeUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        Mockito.verify(service).enviarCorreoPedido(PedidoId.of("1"), "Su cilindraje cambio a 156");
+        Mockito.verify(service).enviarCorreoPedido(PedidoId.of("1"), "Su cilindraje cambio a 1");
         Assertions.assertEquals(0, events.size());
     }
 

@@ -1,5 +1,4 @@
 package co.com.example.logisticaproductos.cliente.events;
-
 import co.com.example.logisticaproductos.cliente.values.ClienteId;
 import co.com.sofka.domain.generic.DomainEvent;
 

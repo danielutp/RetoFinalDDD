@@ -15,7 +15,7 @@ public class NotificarCambioDeCilindrajeUseCase extends UseCase<TriggeredEvent<C
 
         var service = getService(EmailServicePedido.class).orElseThrow();
 
-        String body = String.format("Su cilindraje cambio a %s", event.tipoDeVehiculo().value().cilindraje());
+        String body = String.format("Su cilindraje cambio a %s", event.cilindraje());
         service.enviarCorreoPedido(event.id(), body);
 
         emit().onResponse(new ResponseEvents(List.of()));
