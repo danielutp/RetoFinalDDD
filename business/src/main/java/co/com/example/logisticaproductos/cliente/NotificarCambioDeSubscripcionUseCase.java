@@ -19,7 +19,5 @@ public class NotificarCambioDeSubscripcionUseCase extends UseCase<TriggeredEvent
         service.enviarCorreo(event.id(), body);
 
         emit().onResponse(new ResponseEvents(List.of()));
-
-
     }
 }
