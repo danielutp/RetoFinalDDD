@@ -1,7 +1,6 @@
-# Reto Final DD
+# Reto Final DDD
 
-En el siguiente repositorio vamos a observar un proyecto con pautas DDD, donde se modela especificamemte el contexto de distribucion de productos, como un Rappi
-## Modelamiento del Dominio
+En el siguiente repositorio vamos a observar un proyecto con pautas DDD, donde se modela especificamemte el contexto de logistica de productos.
 En el siguiente enlace encontramos el modelo tanto estrategico como tactico del dominio enfocado en el contexto del transporte: https://drive.google.com/drive/folders/1s9kRtRhI7Mt4dFHLgMOBBIPw5tKVxfY-?usp=sharing
 *(preferiblemente abrir el archivo con la pagina draw.io)*
 
