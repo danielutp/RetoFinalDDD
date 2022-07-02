@@ -12,6 +12,8 @@ public class PedidoEventChange extends EventChange {
             pedido.factura = new Factura(event.facturaId(),event.valor());
             pedido.proveedor = new Proveedor(event.proveedorId(),event.producto());
             pedido.medioDePago = null;
+            pedido.domiciliarioId = event.domiciliarioId();
+            pedido.clienteId = event.clienteId();
         });
 
         apply((NombreProductoCambiado event) ->{

@@ -16,7 +16,9 @@ public class CrearPedidoUseCase extends UseCase<RequestCommand<CrearPedidoComman
                 command.valor(),
                 command.categoriaId(),
                 command.tipoDeCategoria(),
-                command.medioDePago()
+                command.medioDePago(),
+                command.domiciliarioId(),
+                command.clienteId()
         );
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
     }

@@ -1,4 +1,5 @@
 package co.com.example.logisticaproductos.pedido;
+import co.com.example.logisticaproductos.domiciliario.values.DomiciliarioId;
 import co.com.example.logisticaproductos.pedido.commands.CambiarNombreProductoCommand;
 import co.com.example.logisticaproductos.pedido.commands.CambiarTipoDeCategoriaCommand;
 import co.com.example.logisticaproductos.pedido.events.NombreProductoCambiado;
@@ -57,8 +58,10 @@ class CambiarTipoDeCategoriaUseCaseTest {
         CategoriaId categoriaId = CategoriaId.of("1");
         TipoDeCategoria tipoDeCategoria = new TipoDeCategoria("bla", "blabla");
         MedioDePago medioDePago = new MedioDePago("a", 2);
+        DomiciliarioId domiciliarioId = DomiciliarioId.of("1");
+        ClienteId clienteId = ClienteId.of("1");
         return List.of(
-                new PedidoCreado( proveedorId, producto, facturaId,valor,categoriaId,tipoDeCategoria,medioDePago)
+                new PedidoCreado( proveedorId, producto, facturaId,valor,categoriaId,tipoDeCategoria,medioDePago,domiciliarioId,clienteId)
         );
     }
 

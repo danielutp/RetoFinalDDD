@@ -1,4 +1,5 @@
 package co.com.example.logisticaproductos.pedido;
+import co.com.example.logisticaproductos.domiciliario.values.DomiciliarioId;
 import co.com.example.logisticaproductos.pedido.events.NombreProductoCambiado;
 import co.com.example.logisticaproductos.pedido.events.NombreTipoDeCategoriaCambiado;
 import co.com.example.logisticaproductos.pedido.events.PedidoCreado;
@@ -6,18 +7,23 @@ import co.com.example.logisticaproductos.pedido.events.ValorFacturaCambiado;
 import co.com.example.logisticaproductos.pedido.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.example.logisticaproductos.pedido.values.ClienteId;
+
 import java.util.List;
 
 public class Pedido extends AggregateEvent<PedidoId> {
 
+    protected ClienteId clienteId;
+
+    protected DomiciliarioId domiciliarioId;
     protected Proveedor proveedor;
     protected Factura factura;
     protected Categoria categoria;
     protected MedioDePago medioDePago;
 
-    public Pedido(PedidoId id, ProveedorId proveedorId, Producto producto, FacturaId facturaId, Valor valor, CategoriaId categoriaId, TipoDeCategoria tipoDeCategoria, MedioDePago medioDePago) {
+    public Pedido(PedidoId id, ProveedorId proveedorId, Producto producto, FacturaId facturaId, Valor valor, CategoriaId categoriaId, TipoDeCategoria tipoDeCategoria, MedioDePago medioDePago,DomiciliarioId domiciliarioId,ClienteId clienteId) {
         super(id);
-        appendChange(new PedidoCreado(proveedorId,producto,facturaId,valor,categoriaId,tipoDeCategoria,medioDePago)).apply();
+        appendChange(new PedidoCreado(proveedorId,producto,facturaId,valor,categoriaId,tipoDeCategoria,medioDePago,domiciliarioId,clienteId)).apply();
         subscribe(new PedidoEventChange(this));
     }
 

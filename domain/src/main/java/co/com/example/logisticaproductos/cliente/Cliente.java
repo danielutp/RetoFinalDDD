@@ -1,6 +1,7 @@
 package co.com.example.logisticaproductos.cliente;
 import co.com.example.logisticaproductos.cliente.events.*;
 import co.com.example.logisticaproductos.cliente.values.*;
+import co.com.example.logisticaproductos.pedido.values.PedidoId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 

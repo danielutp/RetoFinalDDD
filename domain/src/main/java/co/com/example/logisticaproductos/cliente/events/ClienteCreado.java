@@ -4,10 +4,10 @@ import co.com.example.logisticaproductos.cliente.values.CuentaId;
 import co.com.example.logisticaproductos.cliente.values.Rol;
 import co.com.example.logisticaproductos.cliente.values.SuscripcionId;
 import co.com.example.logisticaproductos.cliente.values.TipoSuscripcion;
+import co.com.example.logisticaproductos.pedido.values.PedidoId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class ClienteCreado extends DomainEvent {
-
 
     private final CuentaId cuentaId;
     private final SuscripcionId suscripcionId;

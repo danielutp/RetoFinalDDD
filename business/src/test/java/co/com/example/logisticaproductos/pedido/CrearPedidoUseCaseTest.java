@@ -1,9 +1,11 @@
 package co.com.example.logisticaproductos.pedido;
+import co.com.example.logisticaproductos.domiciliario.values.DomiciliarioId;
 import co.com.example.logisticaproductos.pedido.commands.CrearPedidoCommand;
 import co.com.example.logisticaproductos.pedido.events.PedidoCreado;
 import co.com.example.logisticaproductos.pedido.values.*;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
+import co.com.example.logisticaproductos.pedido.values.ClienteId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +29,9 @@ class CrearPedidoUseCaseTest {
         CategoriaId categoriaId = CategoriaId.of("1");
         TipoDeCategoria tipoDeCategoria = new TipoDeCategoria("bla", "blabla");
         MedioDePago medioDePago = new MedioDePago("a", 2);
-        var command = new CrearPedidoCommand(pedidoId, proveedorId, producto, facturaId, valor, categoriaId, tipoDeCategoria, medioDePago);
+        DomiciliarioId domiciliarioId = DomiciliarioId.of("1");
+        ClienteId clienteId = ClienteId.of("1");
+        var command = new CrearPedidoCommand(pedidoId, proveedorId, producto, facturaId, valor, categoriaId, tipoDeCategoria, medioDePago,domiciliarioId,clienteId);
 
 
         //act
